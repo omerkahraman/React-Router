@@ -5,6 +5,8 @@ import BlogLayout from './pages/blog';
 import Categories from './pages/blog/Categories';
 import Post from './pages/blog/Post';
 import Blog from './pages/blog/Blog';
+import Page404 from './pages/Page404';
+import Blog404 from './pages/blog/Blog404'
 
 
 function App() {
@@ -29,8 +31,10 @@ function App() {
         <Route path='/blog' element={<BlogLayout />}>
           <Route index={true} element={<Blog />} />
           <Route path='categories' element={<Categories />} />
-          <Route path='post/:url' element={<Post />} />
+          <Route path='post/:url/:id' element={<Post />} />
+          <Route path='*' element={<Blog404 />} />
         </Route>
+        <Route path='*' element={<Page404 />} />
       </Routes>
     </>
   );
